@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello/{msg?}/{aiueo?}',function ($msg="なにも入力されていません",$akira="何も入力されていません") {return $msg . $akira;});
+Route::get('/hello','App\Http\Controllers\HelloController@index');
