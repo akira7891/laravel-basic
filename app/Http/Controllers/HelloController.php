@@ -3,26 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
   
-public function index($id='noname', $pass='unknown')
+public function index(Request $request,Response $response)
 {
-return
+    $html=<<<eof
+    <pre>$request</pre>
+    <br><br><br>
+    <pre>$response</pre>
+    <p></p>
+    eof;
 
-<<<EOF
+    return $html;
 
-        <html>
-
-            <body>
-                <ul>
-                    <li>ID: {$id}</li>
-                    <li>PASS: {$pass}</li>
-                </ul>
-            </body>
-        </html>
-
-EOF;
 }
 }
