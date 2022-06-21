@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 
 class HelloMiddleware
 {
-    public function handle(Request $request, Closure $next)
-    {
-        $data=[
-            ['name'=>'taro','mail'=>'taro@yamada'],
-            ['name'=>'hanako','mail'=>'hanako@flower'],
-            ['name'=>'sachiko','mail'=>'sachi@happy'],
-    
-        ];
-        //mergeは　フォームの送信などで　送られる値に　新たな値を　追加するもの
-        $request->merge(['data'=>$data]);
-        return $next($request);
-    }
+   public function handle($request, Closure $next)
+   {
+       //コントローラーの処理の結果が入っている
+       $response = $next($request);
+
+       //htmlのソースコードが入っている
+       $content = $response->content() . 'aiueo';
+
+       $response->setContent($content);
+       return $response;
+   }
 }

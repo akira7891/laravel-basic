@@ -1,3 +1,3 @@
-@foreach($data as $item)
-名前{{$item['name']}}　メールアドレス{{$item['mail']}}<br>
-@endforeach
+<p>ここが本文のコンテンツです。</p>
+   <p>これは、<middleware>google.com</middleware>へのリンクです。</p>
+   <p>これは、<middleware>yahoo.co.jp</middleware>へのリンクです。</p>

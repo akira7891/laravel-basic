@@ -10,6 +10,6 @@ class HelloController extends Controller
   
 public function index(Request $request,Response $response)
 {
-    return view('index',['data'=>$request->data]);
+    return view('index');
 }
 }
